@@ -1,0 +1,850 @@
+  <!doctype html>
+<html lang="en-US"
+ xmlns:fb="http://ogp.me/ns/fb#" class="no-js">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c7315038e4",applicationID:"283044406"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Critical CSS-->
+    <link rel="stylesheet" href="https://www.imoney.ph/articles/wp-content/themes/imoney-2015-ph/css/base-critical.css">
+
+                  <meta name="author" content="imoney">
+                
+    
+
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link rel="shortcut icon" href="//www.imoney.ph/sites/default/files/favicon_2.png" />
+
+    
+<!-- This site is optimized with the Yoast SEO plugin v12.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Best Business Opportunities In The Philippines For 2020</title>
+<meta name="description" content="Here are 9 of the top business opportunities in the Philippines that are worth considering in 2020, starting from ₱20,000 capital up to ₱500,000 and up."/>
+<link rel="canonical" href="https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Best Business Ideas In The Philippines For 2020" />
+<meta property="og:description" content="Whether you want to be your own boss or you simply want an extra stream of income, this list will give you some idea where and how to start!" />
+<meta property="og:url" content="https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" />
+<meta property="og:site_name" content="iMoney.ph" />
+<meta property="article:section" content="Entrepreneurship" />
+<meta property="article:published_time" content="2020-01-17T08:30:09+00:00" />
+<meta property="article:modified_time" content="2020-06-30T08:14:57+00:00" />
+<meta property="og:updated_time" content="2020-06-30T08:14:57+00:00" />
+<meta property="og:image" content="https://static.imoney.ph/articles/wp-content/uploads/2020/01/business-ideas-fb.jpg" />
+<meta property="og:image:secure_url" content="https://static.imoney.ph/articles/wp-content/uploads/2020/01/business-ideas-fb.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:description" content="Here are 9 of the top business opportunities in the Philippines that are worth considering in 2020, starting from ₱20,000 capital up to ₱500,000 and up." />
+<meta name="twitter:title" content="Best Business Opportunities In The Philippines For 2020" />
+<meta name="twitter:image" content="https://static.imoney.ph/articles/wp-content/uploads/2020/01/business-ideas-fb.jpg" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.imoney.ph/articles/#website","url":"https://www.imoney.ph/articles/","name":"iMoney.ph","potentialAction":{"@type":"SearchAction","target":"https://www.imoney.ph/articles/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/#primaryimage","url":"https://static.imoney.ph/articles/wp-content/uploads/2017/04/best-business-ideas-header.jpg","width":800,"height":400,"caption":"light bulbs"},{"@type":"WebPage","@id":"https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/#webpage","url":"https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/","inLanguage":"en-US","name":"Best Business Opportunities In The Philippines For 2020","isPartOf":{"@id":"https://www.imoney.ph/articles/#website"},"primaryImageOfPage":{"@id":"https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/#primaryimage"},"datePublished":"2020-01-17T08:30:09+00:00","dateModified":"2020-06-30T08:14:57+00:00","author":{"@id":"https://www.imoney.ph/articles/#/schema/person/c149b6069e4b664a789935937d77dcb5"},"description":"Here are 9 of the top business opportunities in the Philippines that are worth considering in 2020, starting from \u20b120,000 capital up to \u20b1500,000 and up."},{"@type":["Person"],"@id":"https://www.imoney.ph/articles/#/schema/person/c149b6069e4b664a789935937d77dcb5","name":"imoney","image":{"@type":"ImageObject","@id":"https://www.imoney.ph/articles/#authorlogo","url":"https://secure.gravatar.com/avatar/0130ac4ee40d2f15b8bbaf70aa71c3dc?s=96&d=mm&r=g","caption":"imoney"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//static.apester.com' />
+<link rel='dns-prefetch' href='//www.imoney.ph' />
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="iMoney.ph &raquo; Feed" href="https://www.imoney.ph/articles/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iMoney.ph &raquo; Comments Feed" href="https://www.imoney.ph/articles/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="iMoney.ph &raquo; Best Business Ideas In The Philippines For 2020 Comments Feed" href="https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.imoney.ph\/articles\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.3"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css'  href='https://www.imoney.ph/articles/wp-includes/css/dist/block-library/style.min.css?ver=5.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_frontend-css'  href='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/css/wds_frontend.css?ver=2.1.74' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_effects-css'  href='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/css/wds_effects.css?ver=2.1.74' type='text/css' media='all' />
+<link rel='stylesheet' id='wds_font-awesome-css'  href='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/css/font-awesome/font-awesome.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://www.imoney.ph/articles/wp-content/plugins/tablepress/css/default.min.css?ver=1.9.2' type='text/css' media='all' />
+<style id='tablepress-default-inline-css' type='text/css'>
+.tablepress-id-45 .column-2{width:100px}.tablepress td,.tablepress th{padding:10px 20px}.tablepress tfoot th,.tablepress thead th{background-color:#1e7ea9;border-bottom:3px solid #1a6e93;border-right:1px solid #165e7e}.tablepress tfoot th:last-child,.tablepress thead th:last-child{border-right:none}
+</style>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var configuration = {"rendererBaseUrl":"https:\/\/renderer.apester.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' async="async" src='https://static.apester.com/js/sdk/latest/apester-javascript-sdk.min.js?ver=5.2.3'></script>
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=1.11.3'></script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/js/jquery.mobile.js?ver=2.1.74'></script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/js/jquery.featureCarouselslider.js?ver=2.1.74'></script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/js/wds_hotspot.js?ver=2.1.74'></script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-content/plugins/slider-wd/js/wds_frontend.js?ver=2.1.74'></script>
+<link rel='https://api.w.org/' href='https://www.imoney.ph/articles/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.imoney.ph/articles/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.imoney.ph/articles/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.2.3" />
+<link rel='shortlink' href='https://www.imoney.ph/articles/?p=20083' />
+<link rel="alternate" type="application/json+oembed" href="https://www.imoney.ph/articles/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imoney.ph%2Farticles%2Fbest-ideas-business-opportunities-philippines%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.imoney.ph/articles/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imoney.ph%2Farticles%2Fbest-ideas-business-opportunities-philippines%2F&#038;format=xml" />
+<meta property="fb:app_id" content="854722911243224"/>
+    <meta name="linkstant" content="5630390" />
+
+    <script type='text/javascript'>
+      var iAJSLoader = {
+        scripts: [],
+        stateTracker: [],
+        curGroupIndex: 0,
+        onCompleteCalled: false,
+        onComplete: function() {console.log('iJSLoader Completed!')},
+        onStateChange: function(groupIndex, group, path, callbackName) {
+          this.stateTracker[groupIndex] = this.stateTracker[groupIndex] || {};
+          this.stateTracker[groupIndex].total = group.length;
+
+          var _success = false;
+          return function() {
+            if (!_success && (!this.readyState || (this.readyState == 'complete'))) {
+              _success = true;
+              iAJSLoader.stateTracker[groupIndex].loaded = iAJSLoader.stateTracker[groupIndex].loaded || 0;
+              iAJSLoader.stateTracker[groupIndex].loaded++;
+
+              if(iAJSLoader.stateTracker[groupIndex].loaded == iAJSLoader.stateTracker[groupIndex].total) {
+                iAJSLoader[callbackName]();
+              }
+            }
+          };
+        },
+        init: function(scripts) {
+          this.scripts = scripts;
+          this.loadNextGroup();
+        },
+        loadNextGroup: function() {
+          if (!this.scripts.length) {
+            if(this.onCompleteCalled) return;
+
+            this.onCompleteCalled = true;
+            return this.onComplete();
+          }
+
+          var group = this.scripts.shift();
+
+          for(var si=0; si<group.length; si++) {
+            var path = group[si];
+            var scriptElm = document.createElement('script');
+            scriptElm.type = 'text/javascript';
+            scriptElm.async = 'async';
+            scriptElm.src = path;
+            scriptElm.onload = scriptElm.onreadystatechange = this.onStateChange(this.curGroupIndex, group, path, 'loadNextGroup');
+
+            var headElm = document.head || document.getElementsByTagName('script')[0];
+            headElm.appendChild(scriptElm);
+          }
+
+          this.curGroupIndex++;
+        }
+      };
+
+      iAJSLoader.init([
+        [
+          "https://www.imoney.ph/articles/wp-content/themes/imoney-2015-ph/js/base.min.js",
+          "https://www.imoney.ph/articles/wp-content/themes/imoney-2015-ph/js/jquery.scrolldepth.js",
+          "//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"
+        ],
+        [
+          "//www.imoney.my/js/imupack.min.js"
+        ]
+      ]);
+    </script>
+
+    <!-- Define current URL variable -->
+        
+
+    <!-- Google DFP Code -->
+    <script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+    '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+    })();
+    </script>
+
+  <!-- Google DFP Ad Unit Registration -->
+  <script type='text/javascript'>// <![CDATA[
+  googletag.cmd.push(function() {
+
+  var width = window.innerWidth || document.documentElement.clientWidth;
+
+  if (width >= 768) {
+    googletag.defineSlot('/422122608/PH_728_90_A_Top_Leaderboard',[728,90],'div-gpt-ad-1444701429065-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_Right',[300,250],'div-gpt-ad-1444641446802-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_Right_Bottom',[300,250],'div-gpt-ad-1444702680832-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_in_content',[300,250],'div-gpt-ad-1444641281708-0').addService(googletag.pubads());
+  }
+  else if ((width >= 320) && (width < 768)) {
+    googletag.defineSlot('/422122608/PH_320_50_A_Mobile_Leaderboard',[320,50],'div-gpt-ad-1444641689725-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_Right',[300,250],'div-gpt-ad-1444641446802-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_Right_Bottom',[300,250],'div-gpt-ad-1444702680832-0').addService(googletag.pubads());
+    googletag.defineSlot('/422122608/PH_300_250_A_MRB_in_content',[300,250],'div-gpt-ad-1444641281708-0').addService(googletag.pubads());
+  }   
+  googletag.pubads().collapseEmptyDivs();
+  googletag.pubads().setTargeting("postid", "20083").setTargeting("url", "https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines");
+  googletag.enableServices();
+  });
+  // ]]></script>
+
+  </head>
+  <body class="post-template-default single single-post postid-20083 single-format-standard">
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MXPNVJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MXPNVJ');</script>
+
+    <!-- Data Layer Variables -->
+        
+    <script type="text/javascript">
+      var id =20083;
+      var title = "Best Business Ideas In The Philippines For 2020";
+      var article_sub_category = ["Entrepreneurship","Investment"];
+    </script>
+
+    <!-- Header -->
+    <header role="banner" class="header">
+      <div class="container">
+        <input type="checkbox" name="toggle" id="btn-search-toggle">
+        <label for="btn-search-toggle">
+          <svg width="16" height="16" viewBox="0 0 16 16" xmls="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M9.477 10.89C8.497 11.59 7.297 12 6 12c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6c0 1.296-.41 2.495-1.11 3.476l4.795 4.787c.39.39.39 1.024 0 1.414-.39.39-1.024.39-1.414 0L9.478 10.89zM6 10c2.21 0 4-1.79 4-4S8.21 2 6 2 2 3.79 2 6s1.79 4 4 4z"></path>
+            </g>
+          </svg>
+        </label>
+        <div class="brand brand--header">
+          <a href="https://www.imoney.ph/articles">
+            <span class="logo">iMoney.my</span> Learning Centre
+          </a>
+        </div>
+        <div class="header__search">
+          <form method="get" id="searchform" role="search" action="https://www.imoney.ph/articles">
+  <div class="form-group">
+    <input tabindex="-1" id="search" type="text" name="s" placeholder="Search articles" class="form-control">
+    <button type="submit" class="btn btn-search">
+      <svg width="16" height="16" viewBox="0 0 16 16" xmls="http://www.w3.org/2000/svg">
+        <g>
+          <path d="M9.477 10.89C8.497 11.59 7.297 12 6 12c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6c0 1.296-.41 2.495-1.11 3.476l4.795 4.787c.39.39.39 1.024 0 1.414-.39.39-1.024.39-1.414 0L9.478 10.89zM6 10c2.21 0 4-1.79 4-4S8.21 2 6 2 2 3.79 2 6s1.79 4 4 4z"></path>
+        </g>
+      </svg>
+    </button>
+  </div>
+</form>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <div class="navbar" data-imu-track="li a" data-subject="User" data-description="Link" data-action="Click" data-vertical="Learning Centre">
+      <div class="container">
+        <nav role="navigation">
+          <ul class="navbar__list cf">
+            <li class="nav__item nav__item--all"><a href="#nav"><i></i>All Categories</a>
+              <div id="nav" class="nav__overlay">
+                <div class="nav__overlay__inner">
+                  <div class="nav__overlay__top">
+                    <h3>All Categories</h3><a href="#" class="nav__overlay__close"><i></i>Close</a>
+                  </div>
+                  <div class="nav__overlay__body"  data-imu-track="li a" data-subject="User" data-action="Visit" data-region="Learning Centre Article Sharing Top" data-vertical="Learning Centre">
+                    <div class="nav__overlay__col nav__overlay__col--en">
+                      <div class="nav__overlay__navset">
+                                                                        <ul id="menu-overlay-menu" class="menu"><li id="menu-item-16477" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-16477"><a href="https://www.imoney.ph/articles/latest/"data-region="Learning Centre Menu" data-value="Latest Articles">Latest Articles</a></li>
+<li id="menu-item-16478" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16478"><a href="https://www.imoney.ph/?ref=articles-menu"data-region="Learning Centre Menu" data-value="Go to iMoney.ph">Go to iMoney.ph</a></li>
+<li id="menu-item-16441" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16441"><a href="https://www.imoney.ph/articles/category/banks/"data-region="Learning Centre Menu" data-value="Banks">Banks</a></li>
+<li id="menu-item-16442" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16442"><a href="https://www.imoney.ph/articles/category/broadband/"data-region="Learning Centre Menu" data-value="Broadband">Broadband</a></li>
+<li id="menu-item-16443" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16443"><a href="https://www.imoney.ph/articles/category/car-insurance/"data-region="Learning Centre Menu" data-value="Car Insurance">Car Insurance</a></li>
+<li id="menu-item-16444" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16444"><a href="https://www.imoney.ph/articles/category/car-loan/"data-region="Learning Centre Menu" data-value="Car Loan">Car Loan</a></li>
+<li id="menu-item-16445" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16445"><a href="https://www.imoney.ph/articles/category/careers/"data-region="Learning Centre Menu" data-value="Careers">Careers</a></li>
+<li id="menu-item-16446" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16446"><a href="https://www.imoney.ph/articles/category/credit-card/"data-region="Learning Centre Menu" data-value="Credit Card">Credit Card</a></li>
+<li id="menu-item-16447" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16447"><a href="https://www.imoney.ph/articles/category/credit-score/"data-region="Learning Centre Menu" data-value="Credit Score">Credit Score</a></li>
+<li id="menu-item-16448" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16448"><a href="https://www.imoney.ph/articles/category/debit-card/"data-region="Learning Centre Menu" data-value="Debit Card">Debit Card</a></li>
+<li id="menu-item-16449" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16449"><a href="https://www.imoney.ph/articles/category/debt/"data-region="Learning Centre Menu" data-value="Debt">Debt</a></li>
+<li id="menu-item-16450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16450"><a href="https://www.imoney.ph/articles/category/education/"data-region="Learning Centre Menu" data-value="Education">Education</a></li>
+<li id="menu-item-16451" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16451"><a href="https://www.imoney.ph/articles/category/employment/"data-region="Learning Centre Menu" data-value="Employment">Employment</a></li>
+<li id="menu-item-16452" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-16452"><a href="https://www.imoney.ph/articles/category/entrepreneurship/"data-region="Learning Centre Menu" data-value="Entrepreneurship">Entrepreneurship</a></li>
+<li id="menu-item-16453" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16453"><a href="https://www.imoney.ph/articles/category/fame-and-fortune/"data-region="Learning Centre Menu" data-value="Fame and Fortune">Fame and Fortune</a></li>
+<li id="menu-item-16454" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16454"><a href="https://www.imoney.ph/articles/category/finance-quotes/"data-region="Learning Centre Menu" data-value="Finance Quotes">Finance Quotes</a></li>
+<li id="menu-item-16455" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16455"><a href="https://www.imoney.ph/articles/category/general-money-saving/"data-region="Learning Centre Menu" data-value="General Money Saving">General Money Saving</a></li>
+<li id="menu-item-16456" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16456"><a href="https://www.imoney.ph/articles/category/health-insurance-2/"data-region="Learning Centre Menu" data-value="Health Insurance">Health Insurance</a></li>
+<li id="menu-item-16457" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16457"><a href="https://www.imoney.ph/articles/category/home-loan/"data-region="Learning Centre Menu" data-value="Home Loan">Home Loan</a></li>
+<li id="menu-item-16458" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16458"><a href="https://www.imoney.ph/articles/category/infographic/"data-region="Learning Centre Menu" data-value="Infographic">Infographic</a></li>
+<li id="menu-item-16459" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16459"><a href="https://www.imoney.ph/articles/category/insurance/"data-region="Learning Centre Menu" data-value="Insurance">Insurance</a></li>
+<li id="menu-item-16460" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-16460"><a href="https://www.imoney.ph/articles/category/investment/"data-region="Learning Centre Menu" data-value="Investment">Investment</a></li>
+<li id="menu-item-16461" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16461"><a href="https://www.imoney.ph/articles/category/lifestyle/"data-region="Learning Centre Menu" data-value="Lifestyle">Lifestyle</a></li>
+<li id="menu-item-16462" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16462"><a href="https://www.imoney.ph/articles/category/money-ideas/"data-region="Learning Centre Menu" data-value="Money Ideas">Money Ideas</a></li>
+<li id="menu-item-16463" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16463"><a href="https://www.imoney.ph/articles/category/money-management-2/"data-region="Learning Centre Menu" data-value="Money Management">Money Management</a></li>
+<li id="menu-item-16464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16464"><a href="https://www.imoney.ph/articles/category/most-popular-articles/"data-region="Learning Centre Menu" data-value="Most Popular Articles">Most Popular Articles</a></li>
+<li id="menu-item-16465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16465"><a href="https://www.imoney.ph/articles/category/news/"data-region="Learning Centre Menu" data-value="News">News</a></li>
+<li id="menu-item-16466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16466"><a href="https://www.imoney.ph/articles/category/online-business/"data-region="Learning Centre Menu" data-value="Online Business">Online Business</a></li>
+<li id="menu-item-16467" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16467"><a href="https://www.imoney.ph/articles/category/online-security/"data-region="Learning Centre Menu" data-value="Online Security">Online Security</a></li>
+<li id="menu-item-16468" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16468"><a href="https://www.imoney.ph/articles/category/personal-accident-insurance/"data-region="Learning Centre Menu" data-value="Personal Accident Insurance">Personal Accident Insurance</a></li>
+<li id="menu-item-16469" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16469"><a href="https://www.imoney.ph/articles/category/personal-loan/"data-region="Learning Centre Menu" data-value="Personal Loan">Personal Loan</a></li>
+<li id="menu-item-16470" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16470"><a href="https://www.imoney.ph/articles/category/retirement/"data-region="Learning Centre Menu" data-value="Retirement">Retirement</a></li>
+<li id="menu-item-22317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-22317"><a href="https://www.imoney.ph/articles/category/review/"data-region="Learning Centre Menu" data-value="Review">Review</a></li>
+<li id="menu-item-16471" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16471"><a href="https://www.imoney.ph/articles/category/savings-account/"data-region="Learning Centre Menu" data-value="Savings Account">Savings Account</a></li>
+<li id="menu-item-16472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16472"><a href="https://www.imoney.ph/articles/category/sponsored-2/"data-region="Learning Centre Menu" data-value="Sponsored">Sponsored</a></li>
+<li id="menu-item-16473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16473"><a href="https://www.imoney.ph/articles/category/taxes/"data-region="Learning Centre Menu" data-value="Taxes">Taxes</a></li>
+<li id="menu-item-16474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16474"><a href="https://www.imoney.ph/articles/category/time-deposit/"data-region="Learning Centre Menu" data-value="Time Deposit">Time Deposit</a></li>
+<li id="menu-item-16475" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16475"><a href="https://www.imoney.ph/articles/category/travel-and-transport/"data-region="Learning Centre Menu" data-value="Travel and Transport">Travel and Transport</a></li>
+<li id="menu-item-16476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16476"><a href="https://www.imoney.ph/articles/category/travel-insurance/"data-region="Learning Centre Menu" data-value="Travel Insurance">Travel Insurance</a></li>
+</ul>                                              </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li id="menu-item-16436" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16436"><a href="https://www.imoney.ph/articles/category/credit-card/"data-region="Learning Centre Navigation" data-value="Credit Card">Credit Card</a></li>
+<li id="menu-item-16437" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16437"><a href="https://www.imoney.ph/articles/category/money-management-2/"data-region="Learning Centre Navigation" data-value="Money Management">Money Management</a></li>
+<li id="menu-item-16438" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16438"><a href="https://www.imoney.ph/articles/category/lifestyle/"data-region="Learning Centre Navigation" data-value="Lifestyle">Lifestyle</a></li>
+<li id="menu-item-16439" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16439"><a href="https://www.imoney.ph/articles/category/money-ideas/"data-region="Learning Centre Navigation" data-value="Money Ideas">Money Ideas</a></li>
+<li id="menu-item-29850" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29850"><a href="https://www.imoney.ph/articles/category/guides/"data-region="Learning Centre Navigation" data-value="Guides">Guides</a></li>
+<li id="menu-item-16440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16440"><a href="https://www.imoney.ph/?ref=articles-top"data-region="Learning Centre Navigation" data-value="Go to iMoney.ph">Go to iMoney.ph</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- BEFORE CONTENT -->
+    
+                        <div class="before-content">
+            <div class="container">
+              			<div class="textwidget"><div class="ad ad--leaderboard">
+<div id=div-gpt-ad-1444701429065-0 style='width:728px; margin: 0 auto;' class=hidden-xs>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444701429065-0'); });
+</script>
+</div>
+<div id='div-gpt-ad-1444641689725-0' style='width:320px; margin: 0 -15px;' class="visible-xs-inline-block">
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444641689725-0'); });
+</script>
+</div>
+</div>
+</div>
+		              <!-- Breadcrumb -->
+                          </div>
+          </div>
+                    
+    
+    <main role="main" class="content">
+
+	<div class="content__main">
+									
+		<div class="container">
+
+			<div class="content__left" id="main">
+				
+					
+					<!-- article -->
+										<article id="post-20083" class="article article--post post-20083 post type-post status-publish format-standard has-post-thumbnail hentry category-entrepreneurship category-investment">
+												<div class="post__featureimg">
+							<img src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/best-business-ideas-header.jpg" alt="Best Business Ideas In The Philippines For 2020">
+						</div>
+												<div class="post__header">
+															<h1 class="entry-title">Best Business Ideas In The Philippines For 2020</h1>
+							
+							<div class="meta">
+								<div class="meta__date">
+									<i class="icon icon__meta icon__meta--date"></i>
+									<time datetime="2020-01-17 16:30" class="post-date updated">
+										January 17, 2020									</time>
+								</div>
+
+								<div class="meta__category">
+									<i class="icon icon__meta icon__meta--category"></i>
+									<div><a href="https://www.imoney.ph/articles/category/entrepreneurship/" rel="tag">Entrepreneurship</a>, <a href="https://www.imoney.ph/articles/category/investment/" rel="tag">Investment</a></div>
+								</div>
+															</div>
+						</div>
+						<div class="post__share--top" data-imu-track="li a" data-subject="User" data-description="Share" data-vertical= "Learning Centre">
+							<div class="post__share">
+  <div class="share__total">Share this!</div>
+  <div class="share__channels">
+  	<ul>
+  		<li class="share__fb" >
+  			<a href="//www.facebook.com/sharer/sharer.php?u=https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"  data-value="Facebook">
+  				<i class="icon icon__share icon__share--fb"></i>
+  				<b  >Share</b>
+  				</a>
+  		</li><!--
+  		--><li class="share__tw">
+  			<a href="https://twitter.com/share?text=Best Business Ideas In The Philippines For 2020&via=iMoneyPh&url=https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-value="Twitter">
+  				<i class="icon icon__share icon__share--tw"></i>
+  				<b>Tweet</b>
+  			</a>
+  		</li><!--
+  		--><li class="share__email">
+  			<a href="mailto:?subject=Best Business Ideas In The Philippines For 2020&amp;body=Check this article on iMoney https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" data-value="Email">
+  				<i class="icon icon__share icon__share--mail"></i>
+  				<b>Email</b>
+  			</a>
+  		</li><!--
+  		--><li class="share__wa">
+  			<a href="whatsapp://send?text=Read this article on iMoney: Best Business Ideas In The Philippines For 2020 - https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" data-value="Whatsapp">
+  				<i class="icon icon__share icon__share--wa"></i>
+  				<b>WhatsApp</b>
+  			</a>
+  		</li>
+  	</ul>
+  </div>
+</div>						</div>
+
+						<div class="post__content">
+							<p class="byline">
+								<span class="byline--author vcard author post-author">Written by <span class="fn"><a href="https://www.imoney.ph/articles/author/imoney/" title="Posts by imoney" rel="author">imoney</a></span></span>
+															</p>
+
+							<!-- TLDR -->
+														<p><span style="font-weight: 400;">Dare to be your own boss? Well, now is a good a time as any. The fast-growing economy of the Philippines presents a lot of opportunities for entrepreneurs. That said, it is important to know the viability of your planned venture based on trends and your available capital. You can generate business ideas on your own or you can check our list of ready solutions below</span></p>
+<p><span style="font-weight: 400;">To help you out, this article shall provide a couple of ideas for businesses that require a range of capital infusion from below twenty thousand pesos to above five hundred thousand pesos.</span></p>
+<h4><b>Business capital: Below ₱20,000</b></h4>
+<p><b>1. Online freelance services</b></p>
+<p><span style="font-weight: 400;">Thanks to the Internet, opportunities for freelancers can cross borders, oceans, and continents. Depending on your expertise, you can start an online company that provides freelance services. </span></p>
+<p><span style="font-weight: 400;">With so many available types of work in the market, the first thing you need to do is to find out which type of service you would like to offer on a freelance basis – either for full-time or part-time position. There are several niches to choose from. Some of the most popular are writing, graphic designing, or working as a virtual assistant. And there’s always a demand for people who can provide these services at a lower cost. The best thing about it is that you don’t need to put up with the harrowing daily commute and you can work practically everywhere.</span></p>
+<p><img class="aligncenter size-full wp-image-20090" title="Freelancer Working Hard" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/freelance-business.jpg" alt="freelancer working" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/freelance-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/freelance-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/freelance-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> All you really need to put up this business is a good Internet connection, a computer, and a simple website. You can create the latter at a later date and get your start by using free accounts on Facebook and LinkedIn to showcase your services. This will lower your initial operational expenses to the cost of your monthly Internet connection if you already have a computer at home.  </span></p>
+<p><b>Income: </b><span style="font-weight: 400;">With freelancing, you are a one-man company. You are the manager, the CEO, and you manage all the work. Your pay depends on the kind of work that you put in. Employers pay for as little as ₱1,500 to a high of ₱20,000.</span></p>
+<p><b>Opportunities:</b><span style="font-weight: 400;"> Having a strong network of connections is critical to becoming a successful freelancer. Remember, that the most successful freelancers know how to use their network. While joining freelancers’ groups and joining conferences and events will help you make good connections, you should first leverage your personal network (family members, friends, neighbours, former bosses and co-workers, and acquaintances) to help spread the word for you.  Once you get established and the projects coming in are more than you can handle, you can outsource work to your network and earn from them by charging an overriding commission.</span></p>
+<p><b>2. Load retailer</b></p>
+<p><span style="font-weight: 400;">The Philippines is one of the countries with the most number of active mobile users. That said, only a small percentage have mobile plans attached to their phones while the rest are using prepaid SIM cards.</span></p>
+<p><span style="font-weight: 400;">There are two ways to get started: </span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">By acquiring an individually issued retail SIM cards from telecom companies (Globe, Smart, or Sun Cellular) and using separate phones for each, unless you’re using a dual SIM phone.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Or by simply getting an All-in-one SIM Card from a third party seller (which would enable a retailer to sell prepaid load for all networks using just a single, special SIM card) and would only require one phone to use. Also, this type of SIM card extends beyond providing e-load for cellular network users. All-in-one SIM Cards can also re-load pre-paid cable subscriptions, Internet cards, and eCredits.</span></li>
+</ul>
+<p><img class="aligncenter size-full wp-image-20091" title="Phone In Use" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/reload-business.jpg" alt="using a phone" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/reload-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/reload-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/reload-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> The capital and requirements are very minimal. All you would need is a mobile phone, a retailer SIM card, and around ₱500–₱1000 as starting balance. </span></p>
+<p><b>Income: </b><span style="font-weight: 400;">As an e-load retailer, you get your earnings through commission and the rate from each telecom company ranges from 3% to 13%. You earn your commission as the amount subtracted from your eWallet/eMoney account is less than what your customer pays for. To illustrate: </span></p>
+<table>
+<tbody>
+<tr>
+<td><b>Customer’s reload amount</b></td>
+<td><b>Deduction on your load wallet</b></td>
+<td><b>Total profit</b></td>
+</tr>
+<tr>
+<td><span style="font-weight: 400;">₱30</span></td>
+<td><span style="font-weight: 400;">₱27</span></td>
+<td><span style="font-weight: 400;">₱30 &#8211; ₱27 = </span><b>₱3</b></td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-weight: 400;">On average, this business can net you between ₱1,000 to ₱2,000 per month if you can sell a total of ₱10,000 to ₱20,000 worth of load. </span></p>
+<p><b>Opportunities:</b><span style="font-weight: 400;"> Remember that e-load retailers are the ‘front liners’ of the e-loading business, above them are the sub-dealers, dealers, distributors, and the telecom company. For individuals who have more start-up capital available (around ₱4,000–₱7,000), a sub-dealership can provide a larger income through an added commission from the retailers you get to join your network.</span></p>
+<p>If you&#8217;re in urgent need of cash and getting a loan from traditional banks will take too long, then your next best option would be to <strong><a href="https://www.imoney.ph/online-loan?src=internal_article_best-ideas-business-opportunities-philippines" target="_blank" rel="noopener noreferrer">apply for an online cash loan</a></strong> from reliable and reputable financial providers. Go over the list and compare loan details such as rates, tenure, application requirements, and other important factors that can assist in getting that needed funding. What&#8217;s best is you can use it for any purpose without any credit card or collateral required.</p>
+<h4><b>Business capital: Less than ₱100,000</b></h4>
+<p><b>1. Ukay-Ukay/Thrift shop</b></p>
+<p><span style="font-weight: 400;">Filipinos are generally thrifty and the search for the cheapest and most affordable but useable second-hand goods is not just something that everyday people practice. Even fashionistas/fashion bloggers are on the look-out for unique one-of-a-kind items that can only be found in </span><i><span style="font-weight: 400;">ukay-ukay </span></i><span style="font-weight: 400;">stores.</span></p>
+<p><i><span style="font-weight: 400;">Ukay-ukay</span></i><span style="font-weight: 400;"> products normally consist of used clothes, shoes, bags and accessories which are usually imported from other countries and are sold at a very cheap price, depending on the quality and type of product. </span></p>
+<p><span style="font-weight: 400;">To start one, you will need the necessary government registration and business permits and to rent a stall/store with a good flow of foot and vehicle traffic to easily attract customers.</span></p>
+<p><img class="aligncenter size-full wp-image-20092" title="Ukay-ukay Finds" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/ukay-ukay-business.jpg" alt="clothing shop" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/ukay-ukay-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/ukay-ukay-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/ukay-ukay-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> Aside from your stall’s rent and registration, other initial operational expenses include racks, hangers, shelves and storage boxes. You should also consider your customers’ comfort by installing industrial fans and an air-conditioning unit if you can afford it. Maintenance for your goods would also require the use of a dehumidifier to prevent the formation of mold.  </span></p>
+<p><i><span style="font-weight: 400;">Ukay-ukay</span></i><span style="font-weight: 400;"> are sold in bales which usually weigh 100 kilos by wholesale traders. A bundle may contain 150 to 1,000 different pieces of clothing sorted into specific kinds such as pants, underwear, kid&#8217;s wear, jackets, women&#8217;s blouses, shirts, formal attires and shoes.</span></p>
+<p><span style="font-weight: 400;">Price range for the bundles ranges from ₱4,000 to ₱15,000. The cost of a bundle generally depends on the number of clothes it contains and the quality and type of the products.</span></p>
+<p><span style="font-weight: 400;">Most of the listed prices however are based on single purchase only, so the more bales you buy, the bigger the discounts you can get.</span></p>
+<p><b>Income: </b><span style="font-weight: 400;">An </span><i><span style="font-weight: 400;">ukay-ukay</span></i><span style="font-weight: 400;"> store owner can easily earn between ₱1,000 to ₱10,000 per day, to as high as ₱15,000 during the months of December and January.</span></p>
+<p><b>Opportunities:</b><span style="font-weight: 400;">  It is generally recommended to start marking down prices (20%-80%) of remaining items three to five weeks after initial display. You should also change your stocks every 45 days to ensure that your customers have new products to choose from. Once you’ve established your store and acquired back your ROI, it would be a cinch to expand your current store or to start another branch in another part of your town or city. </span></p>
+<p><b>2. Rice retailing</b></p>
+<p><span style="font-weight: 400;">In the Philippines where rice is a staple food, starting a rice retailing business is always a profitable venture. Customers buy it practically daily for sustenance while food establishments orders them in bulk.</span></p>
+<p><img class="aligncenter size-full wp-image-20093" title="Rice Retailer" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/rice-retailing-business.jpg" alt="sacks of rice" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/rice-retailing-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/rice-retailing-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/rice-retailing-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;">  You can start this business with a capital of about ₱80,000 to ₱120,000. You would also have to secure a license from the National Food Authority (NFA) and to acquire the necessary government registration and permits. </span></p>
+<p><span style="font-weight: 400;">The location you choose should have the right target market and has heavy foot and vehicle traffic. The downside of selling rice is that it can spoil easily, and its quality will deteriorate in three months. So implement a first-in, first-out inventory method to optimize the shelf life of your rice and maintain its quality.</span></p>
+<p><span style="font-weight: 400;">You should also have a clean and sanitized storage area to ensure that bugs and grain weevils do not infiltrate your stockpile. Get tips from your rice supplier on how to prevent infestation.</span></p>
+<p><b>Income: </b><span style="font-weight: 400;">Estimated total weekly income can range from ₱5,000 to ₱20,000 depending on your location and pricing.</span></p>
+<p><b>Opportunities: </b><span style="font-weight: 400;">As in any business, you can later expand your rice retail business once you get your ROI. You could even become a rice dealer and get retailers to sell for you later on.</span></p>
+<p><span style="font-weight: 400;">If the business that you plan to get into doesn’t require a lot of initial funding, why not try to maximize the use of your credit card? If you need initial start-up items and equipment, you can purchase them on installment at 0% interest. Another option is to apply for cash advance with the use of your credit card.</span></p>
+<p><a href="https://clk.omgt3.com/?PID=38613&amp;AID=535943&amp;r=https://shopee.ph/universal-link/7-7?smtt=9&amp;deep_and_deferred=1" target="_blank" rel="noopener noreferrer"><img class="aligncenter  wp-image-30070" src="https://static.imoney.ph/articles/wp-content/uploads/2020/01/shopee-banner-1--800x419.png" alt="" width="546" height="286" srcset="https://static.imoney.ph/articles/wp-content/uploads/2020/01/shopee-banner-1--800x419.png 800w, https://static.imoney.ph/articles/wp-content/uploads/2020/01/shopee-banner-1--300x157.png 300w, https://static.imoney.ph/articles/wp-content/uploads/2020/01/shopee-banner-1--768x402.png 768w, https://static.imoney.ph/articles/wp-content/uploads/2020/01/shopee-banner-1-.png 1200w" sizes="(max-width: 546px) 100vw, 546px" /></a></p>
+<p><b>3. E-commerce</b></p>
+<p><a href="https://static.imoney.ph/articles/wp-content/uploads/2018/07/person-using-black-and-white-smartphone-and-holding-blue-230544.jpg"><img class="aligncenter size-large wp-image-28916" src="https://static.imoney.ph/articles/wp-content/uploads/2018/07/person-using-black-and-white-smartphone-and-holding-blue-230544-800x400.jpg" alt="" width="800" height="400" srcset="https://static.imoney.ph/articles/wp-content/uploads/2018/07/person-using-black-and-white-smartphone-and-holding-blue-230544.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2018/07/person-using-black-and-white-smartphone-and-holding-blue-230544-300x150.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2018/07/person-using-black-and-white-smartphone-and-holding-blue-230544-768x384.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a></p>
+<p><span style="font-weight: 400;">There’s a handful of avenues and methods nowadays to sell stuff online for some extra income. While doing self-promotion through your own Facebook account may still work, there are more efficient ways to fully establish an actual store online &#8211; be it on Facebook or by starting your own website. Plus, you can choose to either sell your own stocks or re-sell without keeping an inventory of a single item (dropshipping).</span></p>
+<p><span style="font-weight: 400;">In this case, we’ll focus on setting up your own store without any inventory (dropshipping), thus, needing only a minimal amount of money to get started. </span></p>
+<p><b>Pre-operational requirement:</b></p>
+<p><span style="font-weight: 400;">Setting up a dropshipping store will only cost you $29 (roughly ₱1,500) a month &#8211; you only pay for the website host where you’ll set up your store. A big chunk of the cost will go to the marketing aspect of your store which involves Facebook ads, to say the least. It’s going to be a big learning curve, but it’s one that will definitely pay off. You can watch videos on Youtube on how to runs ads or hire a mentor which can cost you a lot more but will give you the right footing that you need to get started. </span></p>
+<div class="block block--info"><div class="block__title">For your information</div><div>
+<p>You <span style="font-weight: 400;"> can check out </span><a href="https://www.iamjosephodera.com/ecom-plans"><span style="font-weight: 400;">OJDM </span></a><span style="font-weight: 400;">if you’re serious about starting a local e-commerce business. </div></div></span><span style="font-weight: 400;">A working laptopHere’s what you need to get started:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">A good internet connection</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">A minimum of ₱50,000 budget to start a business (product sourcing and ads)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">A budget of at least ₱25,000 to enroll in a 3-week training session (optional)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Willingness to learn</span></li>
+</ul>
+<p><span style="font-weight: 400;">The total cost to start this business: ₱75,000 to ₱100,000</span></p>
+<p><b>Income</b></p>
+<p><span style="font-weight: 400;">As a rule of thumb, e-commerce players generally mark-up their prices by twice their suppliers’ price (commonly Alibaba or Aliexpress). The profit will be around 25 to 50 percent, depending on the cost of your Facebook ads, because it can vary depending on your target, product, and the season. Many of the successful local dropshippers earn a minimum of ₱100,000 a month, and 25 to 50% of that is their profit after taking into account their ad and inventory (if they are sourcing supplies and paying for the inventory) cost.</span></p>
+<p><b>Opportunities</b></p>
+<p><span style="font-weight: 400;">It may take some time to learn the trick of the trade-in e-commerce, especially if you’re new to this concept. The rewards will be exponential though as it can lead to other opportunities &#8211; on the side, you’ll learn how digital marketing works and you can start a freelancing career out of it. While self-learning is not uncommon in this industry, hiring a mentor will definitely give you the boost that you need to start on a high note in e-commerce &#8211; a huge chunk of investment will go to that, but it’s one that you can never go wrong with. </span></p>
+<p><span style="font-weight: 400;">Since the e-commerce scene is rapidly and relentlessly growing in the Philippines, now is also the best time for businesses to adapt it into their brick and mortar businesses in order to keep up with the competition. Many e-commerce stores that first started online were able to expand it through a physical store later on.  You can do that too!</span></p>
+<div class="product "><div class="product__image"><img src="https://www.imoney.ph/sites/v2.imoney.ph/files/citi-simplicity-plus.jpg" alt="Citi Simplicity+ Card"></div><div class="product__description"><h4><a href="https://www.imoney.ph/credit-card/citibank/simplicity-plus?src=internal_article_text_best-ideas-business-opportunities-philippines" data-position="mid_1_text_box_cc_product" target="_blank">Citi Simplicity+ Card</a></h4><p>No Annual Fee Every Single Year!</p><em>Get 10% back on interest charges if you pay the minimum amount on or before due date.</em></div><div class="product__cta"><a data-position="mid_1_btn_box_cc_product" href="https://www.imoney.ph/credit-card/citibank/simplicity-plus?src=internal_article_btn_best-ideas-business-opportunities-philippines" target="_blank" class="btn btn-lg btn-apply">Apply Now</a></div></div>
+<h4><b>Business capital: Less than ₱500,000</b></h4>
+<p><b>1. Co-working spaces</b></p>
+<p><span style="font-weight: 400;">Many professionals are shifting towards freelancing because of the high returns and low stakes it offers. With more and more freelancers in the market, there is an increasing demand for more co-working spaces where they can work for longer hours without having to rent a full office.</span></p>
+<p><span style="font-weight: 400;">Unlike traditional offices, co-working spaces offer ultra-short office leases that can be anywhere from a day to a month. It is also seen as the solution to bridging the gap between start-ups/SMEs and landlords since it allows the former to maintain offices in central locations without the need of a high starting capital.</span></p>
+<p><img class="aligncenter size-full wp-image-20094" title="Rent Out Office Spaces" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/co-working-space-business.jpg" alt="office space" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/co-working-space-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/co-working-space-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/co-working-space-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> To start a co-working space, you would need an initial capital that would cover the cost of renting a space in a central location that is safe and easy to find. Look for a space that has been vacant for a while, particularly in older and underutilized buildings where you may be able to secure an inexpensive lease.</span></p>
+<p><span style="font-weight: 400;">Though being very contemporary and stylish is an added appeal, your co-working space should primarily have high-speed internet, fully fitted workstations, and office amenities. </span></p>
+<p><b>Income: </b><span style="font-weight: 400;">Estimated monthly income can range from ₱50,000 to ₱100,000 depending on your location and pricing.</span></p>
+<p><b>Opportunities: </b><span style="font-weight: 400;">To make the most out of your rented space, you can offer other services such as a small coffee shop for added income.</span></p>
+<p><b>2. Laundry shop</b></p>
+<p><span style="font-weight: 400;">A laundry shop business has proven itself to be more than just a fad. The steady growth of condominiums and apartments in the city, coupled with the ever-increasing workload of most people, have made laundromats a stable business to own.</span></p>
+<p><img class="aligncenter size-full wp-image-20095" title="Laundry Essentials" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/laundry-business.jpg" alt="laundromat" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/laundry-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/laundry-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/laundry-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> This depends on the size and type of target market. If you are aiming for the industrial market, you will be needing millions. On the other hand, if you plan to cater to individual clients, you may be able to start with only around ₱400,000 for a simple set-up. You would also need to acquire the necessary government permits and registrations to get started. </span></p>
+<p><span style="font-weight: 400;">For this type of business, it is very important to try to be as near your market as possible. If the desired area’s rent is extremely high, you may opt to put up a pickup station and locate your cleaning operations in a low cost area or in your home. In this case, you will need only three to five square meters. If you want to clean the clothes onsite, it will take at least 25 square meters of floor area. </span></p>
+<p><span style="font-weight: 400;">Also, it is important to design a systematic washing process for the business, and have the proper materials and equipment for operation. One key to good income for a laundry shop business is to find that balance between cost and quality in choosing products to use.</span></p>
+<p><span style="font-weight: 400;">Additional services that you can offer will mostly depend on your target market. A free parking space will give you an edge over competitors if most of your clients drive cars. Providing a door-to-door pick-up and delivery service has become an essential part of the business as well.</span></p>
+<p><span style="font-weight: 400;">For your rates, it is safer to just go with the current market rates and to compete on quality of service instead. Also, try to allocate a budget for promotional expenses to get and retain customers. </span></p>
+<p><b>Income: </b><span style="font-weight: 400;">Income will depend on location and size of operation, but on average it ranges between ₱30,000 to ₱100,000 per month.</span></p>
+<p><b>Opportunities: </b><span style="font-weight: 400;">You can provide dry cleaning, ironing and other related services for additional income.</span></p>
+<p><span style="font-weight: 400;">Avoid dipping into your savings when trying a business venture. Its success is never certain, and if the risk is high, it would be wise to rather apply for a personal loan instead of using your life savings. If in case it doesn’t prosper, you still have your savings intact.</span></p>
+<div class="product "><div class="product__image"><img src="https://www.imoney.ph/sites/v2.imoney.ph/files/eastwest-bank-opt.png" alt="EastWest Bank Personal Loan"></div><div class="product__description"><h4><a href="https://www.imoney.ph/personal-loan/eastwest-bank/personal-loan?src=internal_article_text_best-ideas-business-opportunities-philippines" data-position="mid_2_text_box_pl_product" target="_blank">EastWest Bank Personal Loan</a></h4><p>Low Add-on Rate of 1.49% Per Month.</p><em>Borrow Up to ₱2,000,000!</em></div><div class="product__cta"><a data-position="mid_2_btn_box_pl_product" href="https://www.imoney.ph/personal-loan/eastwest-bank/personal-loan?src=internal_article_btn_best-ideas-business-opportunities-philippines" target="_blank" class="btn btn-lg btn-apply">Apply Now</a></div></div>
+<h4><b>Business capital: Above ₱500,000</b></h4>
+<p><b>1. 24-hour convenience store franchise</b></p>
+<p><span style="font-weight: 400;">24-hour convenience stores are popping up everywhere and that number is still growing in lieu of call centres, hospitals and other industries that maintain a graveyard shift. Both Ministop and 7-Eleven provide a long list of assorted merchandise, this includes newspapers, magazines, soft drinks, fruit juices, sport drinks, hot and cold snacks, a limited number of grocery items such as canned soups, ready-to-eat meals, condiments, bread, cleaning supplies, paper products and toothpaste.</span></p>
+<p><span style="font-weight: 400;">If you have the funds but does not have the experience nor know how to run a business, then this is one of the more viable options available for you. Having a franchise with a recognizable name and branding would get you an immediate stream of clients and you will be receiving operational support from the franchisor.</span></p>
+<p><img class="aligncenter size-full wp-image-20096" title="24/7 Convenience Stores" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/convenience-store-franchise.jpg" alt="7-11 store" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/convenience-store-franchise.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/convenience-store-franchise-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/convenience-store-franchise-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> Both 7-Eleven and Ministop now offers a PhP1,000,000 franchise which includes operational rights of the store, equipment and facilities, furniture and fixtures, air-conditioning system, signage and initial inventory. However, as a franchisee, you still have to spend more for the rental space and the crew that will work the store for you. All in all, you might need to shell out a total of ₱1,500,000 in initial capital. </span></p>
+<p><span style="font-weight: 400;">Location is key in this type of business and you would need a space with a floor area between 100-120 square meters to get franchise approval.</span></p>
+<p><b>Income: </b><span style="font-weight: 400;">Income will depend on location and size of operation, but on average it ranges between ₱40,000 to ₱60,000 per month.</span></p>
+<p><b>Opportunities: </b><span style="font-weight: 400;">You can expand your operations by opening a new store once you’ve recouped your ROI.</span></p>
+<p><b>2. Drug store</b></p>
+<p><span style="font-weight: 400;">The pharmaceutical industry is one of the most promising business sectors in the Philippines, as the industry revenue estimates grow by about 6% to 8% every year.</span></p>
+<p><img class="aligncenter size-full wp-image-20097" title="Pharmacy Retailing" src="https://static.imoney.ph/articles/wp-content/uploads/2017/04/pharmacy-business.jpg" alt="drug store shelves" width="800" height="380" srcset="https://static.imoney.ph/articles/wp-content/uploads/2017/04/pharmacy-business.jpg 800w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/pharmacy-business-300x143.jpg 300w, https://static.imoney.ph/articles/wp-content/uploads/2017/04/pharmacy-business-768x365.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p><b>Pre-operational requirements:</b><span style="font-weight: 400;"> The initial capital outlay for this type of business is about ₱500,000 to a few million pesos.</span></p>
+<p><span style="font-weight: 400;">One requirement in the pre-operating stage is getting the needed certification. You have to obtain a Security and Exchange Commission (SEC) registration; permits from the Department of Trade and Industry, the mayor’ office, and the Bureau of Internal Revenue (BIR); and license from the Food and Drug Administration (FDA). </span></p>
+<p><span style="font-weight: 400;">Then you have to find a space of at least 15 square meters to house your drugstore and a storage room for medicines. Conduct research on the nature and classification of drugs and begin by stocking up on each category of medicine (i.e. antibiotics, anti-hypertensive drugs, or vitamins). Inventory will take up most of your expenses, as this can be anywhere from ₱100,000 up to ₱10 million for a full stock. Keep in mind that each medicine must be stored in its particular recommended environment and temperature. </span></p>
+<p><span style="font-weight: 400;">As with most of the businesses we listed here, location is key in this venture. You have to consider the volume of the consumers in the area you’re targeting. </span></p>
+<p><span style="font-weight: 400;">And lastly, you must have a Registered Pharmacist working for you. Without one, your drugstore business will not operate. He or she must be <a href="https://www.imoney.ph/articles/prc-online-registration/" target="_blank" rel="noopener noreferrer">licensed by the Professional Regulation Commission</a> (PRC).</span></p>
+<p><b>Income: </b><span style="font-weight: 400;">Income will depend on location and size of the operation, but on average it ranges between ₱50,000 to ₱100,000 per month.</span></p>
+<p><b>Opportunities: </b><span style="font-weight: 400;">Growth depends entirely on the area you are covering and the range of products you are carrying. But if you get the right mix, you can start another branch or franchise out your drug store.</span></p>
+<p>With advanced progress in technology, communication, and the advent of the internet, the world has indeed become smaller thus making it easier to reach and transact with a wider audience anywhere in the world. There are still open opportunities and it takes a lot of creativity to find <a href="https://powerpinoys.com/best-small-business-ideas-philippines/">more business ideas</a> that can provide solutions to your target market.</p>
+<p><span style="font-weight: 400;">All businesses require diligence and dedication. Do your homework, conduct thorough research and create a business plan. These will be your entrepreneurial blueprints and your guide in navigating the exciting path of working for yourself. </span></p>
+<p><span style="font-weight: 400;">If you have already gone through a lot of thinking and planning, and led you to a firm decision of putting up your own venture, the next challenge is getting the initial funds to start your business.</span></p>
+<p><span style="font-weight: 400;">You can </span><a title="Apply For Personal Loans in Philippines" href="https://www.imoney.ph/personal-loan" data-position="bottom_1_text_pl_general"><b>compare personal loans and get the best rates</b></a><span style="font-weight: 400;"> with our online loan calculator to have an idea on the loan amounts, terms, and interest involved. Once you have decided which bank, but still unsure on how the actual process goes, check out our </span><a title="Everything a First Time Borrower Should Know" href="https://www.imoney.ph/articles/personal-loan-application-guide/"><b>first time borrower’s guide to getting a personal loan</b></a><span style="font-weight: 400;">. It will give you a bird’s eye view on the do’s and don’ts in applying for a personal loan.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em><strong>This article was first published in April 2016 and has been updated for freshness, accuracy, and comprehensiveness.</strong></em></p>
+							<!-- Interview Articles Content
+							// check if the flexible content field has rows of data -->
+													</div>
+						<div class="post__share--bottom" data-imu-track="li a" data-subject="User" data-description="Share" data-vertical= "Learning Centre">
+							<h4>Share this article</h4>
+							<div class="post__share">
+  <div class="share__total">Share this!</div>
+  <div class="share__channels">
+  	<ul>
+  		<li class="share__fb" >
+  			<a href="//www.facebook.com/sharer/sharer.php?u=https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"  data-value="Facebook">
+  				<i class="icon icon__share icon__share--fb"></i>
+  				<b  >Share</b>
+  				</a>
+  		</li><!--
+  		--><li class="share__tw">
+  			<a href="https://twitter.com/share?text=Best Business Ideas In The Philippines For 2020&via=iMoneyPh&url=https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" data-value="Twitter">
+  				<i class="icon icon__share icon__share--tw"></i>
+  				<b>Tweet</b>
+  			</a>
+  		</li><!--
+  		--><li class="share__email">
+  			<a href="mailto:?subject=Best Business Ideas In The Philippines For 2020&amp;body=Check this article on iMoney https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" data-value="Email">
+  				<i class="icon icon__share icon__share--mail"></i>
+  				<b>Email</b>
+  			</a>
+  		</li><!--
+  		--><li class="share__wa">
+  			<a href="whatsapp://send?text=Read this article on iMoney: Best Business Ideas In The Philippines For 2020 - https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" data-value="Whatsapp">
+  				<i class="icon icon__share icon__share--wa"></i>
+  				<b>WhatsApp</b>
+  			</a>
+  		</li>
+  	</ul>
+  </div>
+</div>						</div>
+
+
+						<div id="crp_related" class="crp_related"><h4>Related Articles:</h4><ul><li><a href="https://www.imoney.ph/articles/how-to-sell-lazada-philippines/"    ><img src="https://static.imoney.ph/articles/wp-content/uploads/2019/07/lazada-store-e1562654055311-150x150.png" alt="Start Selling In Lazada With These Simple Steps" title="Start Selling In Lazada With These Simple Steps" width="150" height="150" class="crp_thumb crp_featured" /></a><a href="https://www.imoney.ph/articles/how-to-sell-lazada-philippines/"     class="crp_title">Start Selling In Lazada With These Simple Steps</a></li><li><a href="https://www.imoney.ph/articles/small-sme-business-loans/"    ><img src="https://static.imoney.ph/articles/wp-content/uploads/2016/09/personal_loan_sept23_1-150x150.jpg" alt="Where To Apply For Business Loans In The Philippines?" title="Where To Apply For Business Loans In The Philippines?" width="150" height="150" class="crp_thumb crp_featured" /></a><a href="https://www.imoney.ph/articles/small-sme-business-loans/"     class="crp_title">Where To Apply For Business Loans In The Philippines?</a></li><li><a href="https://www.imoney.ph/articles/small-medium-enterprise-registration-philippines/"    ><img src="https://static.imoney.ph/articles/wp-content/uploads/2019/06/business-registration-e1561099240756-150x150.jpg" alt="How To Register A Small To Medium Enterprise In The Philippines" title="How To Register A Small To Medium Enterprise In The Philippines" width="150" height="150" class="crp_thumb crp_featured" /></a><a href="https://www.imoney.ph/articles/small-medium-enterprise-registration-philippines/"     class="crp_title">How To Register A Small To Medium Enterprise In The&hellip;</a></li><li><a href="https://www.imoney.ph/articles/online-loan-apps/"    ><img src="https://static.imoney.ph/articles/wp-content/uploads/2017/11/smartphone-e1510898910805-150x150.jpg" alt="Online Cash Loans Using Apps That You Can Download Today!" title="Online Cash Loans Using Apps That You Can Download Today!" width="150" height="150" class="crp_thumb crp_featured" /></a><a href="https://www.imoney.ph/articles/online-loan-apps/"     class="crp_title">Online Cash Loans Using Apps That You Can Download Today!</a></li></ul><div class="crp_clear"></div></div>
+						<div class="post__comments">
+							<h4>Leave your comment</h4>
+
+							<!-- <p class="post__comments--loading"><span></span> Loading comments...</p> -->
+
+							<div id="comments">
+								<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ --><div class="fb-comments" data-href="https://www.imoney.ph/articles/best-ideas-business-opportunities-philippines/" data-numposts="3" data-width="100%" data-colorscheme="light"></div>							</div>
+
+							<!-- <div id="comments" class="fb-comments" data-href="" data-width="100%" data-numposts="5" data-colorscheme="light"></div> -->
+
+						</div>
+
+						
+					</article>
+					<!-- /article -->
+
+				
+							</div>
+
+			<!-- sidebar -->
+<aside role="complementary" class="content__side">
+			<div id="text-3" class="widget_text">			<div class="textwidget"><!-- PH_300_250_A_MRB_Right -->
+<div class="ad--midrec-article" id='div-gpt-ad-1444641446802-0' style='width:300px; height:250px; margin: 0 auto'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444641446802-0'); });
+</script>
+</div></div>
+		</div><div id="text-6" class="widget_text">			<div class="textwidget"><div class="widget widget-interview">
+	<div class="interview__header">
+		<h5><span>Exclusive Interviews</span></h5>
+	</div>
+	<div class="interview__body">
+		<div class="interview__slides">
+								<div class="interview-slide">
+						<a href="https://www.imoney.ph/articles/womens-month-interview-pearl-imoney/">
+							<img src="https://static.imoney.ph/articles/wp-content/uploads/2020/03/Pearl-Interview.png" alt="iMoney Philippines Country Manager Shares What It’s Like To Be A Woman Boss" class="interview__portrait">
+							<h4 class="h6">iMoney Philippines Country Manager Shares What It’s Like To Be A Woman Boss</h4>
+						</a>
+					</div>
+								<div class="interview-slide">
+						<a href="https://www.imoney.ph/articles/imoney-ceo-interview/">
+							<img src="https://static.imoney.ph/articles/wp-content/uploads/2019/08/CEO_Interview-Mitul.jpg" alt="Get To Know Our CEO Mitul Lakhani" class="interview__portrait">
+							<h4 class="h6">Get To Know Our CEO Mitul Lakhani</h4>
+						</a>
+					</div>
+								<div class="interview-slide">
+						<a href="https://www.imoney.ph/articles/how-do-you-design-your-success-story-according-to-francis-kong-part-3/">
+							<img src="https://static.imoney.ph/articles/wp-content/uploads/2015/08/francis-kong-id-3.jpg" alt="How Do You Design Your Success Story: According to Francis Kong (Part 3)" class="interview__portrait">
+							<h4 class="h6">How Do You Design Your Success Story: According to Francis Kong (Part 3)</h4>
+						</a>
+					</div>
+			
+		</div>
+
+	</div>
+</div></div>
+		</div><div id="text-4" class="widget_text">			<div class="textwidget"><!-- PH_300_250_A_MRB_Right_Bottom -->
+<div class="ad--midrec-article" id='div-gpt-ad-1444702680832-0' style='width:300px; height:250px; margin: 0 auto'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444702680832-0'); });
+</script>
+</div></div>
+		</div><div id="text-11" class="widget_text">			<div class="textwidget"><div class="widget widget-products">
+	<div class="products__bgarrow"></div>
+	<div class="products__header">
+		<h5>Compare and apply <span>with iMoney</span></h5>
+	</div>
+	<div class="products__body">
+		<a href="https://www.imoney.ph/credit-card"
+			data-subject="User"
+			data-action="Click"
+			data-description="Button"
+			data-value="Credit Card"
+			data-region="Learning Centre Widget 1"
+			data-vertical="Learning Centre">
+			<span><i class="icon__cc"></i></span>Credit Card
+		</a>
+		<a href="https://www.imoney.ph/car-loan"
+			data-subject="User"
+			data-action="Click"
+			data-description="Button"
+			data-value="Car Loan"
+			data-region="Learning Centre Widget 2"
+			data-vertical="Learning Centre">
+			<span><i class="icon__cl"></i></span>Car Loan
+		</a>
+		<a href="https://www.imoney.ph/housing-loan"
+			data-subject="User"
+			data-action="Click"
+			data-description="Button"
+			data-value="Housing Loan"
+			data-region="Learning Centre Widget 3"
+			data-vertical="Learning Centre">
+			<span><i class="icon__hl"></i></span>Housing Loan
+		</a>
+		<a href="https://www.imoney.ph/personal-loan"
+			data-subject="User"
+			data-action="Click"
+			data-description="Button"
+			data-value="Personal Loan"
+			data-region="Learning Centre Widget 4"
+			data-vertical="Learning Centre">
+			<span><i class="icon__pl"></i></span>Personal Loan
+		</a>
+	</div>
+</div></div>
+		</div><div id="text-2" class="widget_text">			<div class="textwidget"><div class="widget widget-newsletter newsletter" data-region="Homepage Content Right" data-imu-track="input" data-vertical="Newsletter"
+    data-description="Newsletter" data-action="Input" data-subject="User">
+    <div class="newsletter__header">
+        <h5 class="aside__title">Get money saving tips!
+</h5>
+        <p class="sub-info">We send you tips & deals that will save you time and money.</p>
+    </div>
+    <div class="newsletter__body" data-subject="User" data-region="Homepage Content Right" data-vertical="Newsletter">
+        <div id="mc_embed_signup">
+            <form method="post" id="subscribeForm" onsubmit="return sendToSubscribe();" name="mc-embedded-subscribe-form" class="validate"
+                novalidate data-api="75b42c1b2edbee3e7bb1b033a033c5ee-us6" data-id="ee0f0e2d94" data-us="us6">
+                <input type="hidden" id="subscribeCid" name="cid" value="8" />
+                <input type="hidden" id="subscribeRegion" name="region" value="PH" />
+                <input type="hidden" id="captureSource" name="capture_source" value="Learning Centre" />
+                <div class="input-group input-group-lg">
+                    <input type="email" value="" name="EMAIL" class="email form-control" id="mce-EMAIL" data-description="Newsletter" data-action="Input"
+                        placeholder="Your Email" required>
+                    <span class="input-group-btn">
+<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-complement" data-action = "Submit" data-value="Newsletter" data-description="Form">
+</span>
+                </div>
+                <input type="hidden" value="128" name="group[14553][128]" id="mce-group[14553]-14553-7">
+            </form>
+            <script>
+                function sendToSubscribe() {
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://subscribe.imoney.my/api/contact',
+                        data: JSON.stringify({
+                            "cid": $('#subscribeCid').val(),
+                            "region": $('#subscribeRegion').val(),
+                            "email": $('#mce-EMAIL').val(),
+                            "capture_source": $('#captureSource').val()
+                        }),
+                        contentType: "application/json",
+                        success: function (data) {
+                            console.log(data);
+                            $('#mce-EMAIL').val('');
+                            $('#mc-embedded-subscribe').val('Done!').addClass('btn-success');
+                        }
+                    });
+                    return false;
+                }
+
+            </script>
+        </div></div>
+		</div><div id="text-10" class="widget_text">			<div class="textwidget"><!-- PH_300_250_A_MRB_in_content -->
+<div class="ad--midrec-article" id='div-gpt-ad-1444641281708-0' style='width:300px; height:250px; margin: 0 auto'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1444641281708-0'); });
+</script>
+</div>
+
+
+</div>
+		</div>	
+</aside>
+<!-- /sidebar -->
+		</div>
+	</div>
+
+
+
+		</main><!-- FOOTER -->
+    <footer role="contentinfo" class="footer">
+    	<div class="footer__header">
+    		<div class="container">
+    		  <div class="brand brand--footer"><a href="https://www.imoney.ph/articles"><span class="logo">iMoney.my</span>Learning Centre</a></div>
+
+    		</div>
+    		<a href="#" id="to-top" class="footer__to-header">Back to top</a>
+    	</div>
+
+      <div class="footer__body">
+        <div class="container">
+          <div class="footer__description">
+            <p>iMoney.ph is a leading financial comparison website and a trusted personal finance authority to help you make the most out of your money.</p>
+          </div>
+          <ul class="footer__social">
+            <li><a href="https://www.facebook.com/iMoneyPH/" class="icon__footer-fb">Facebook</a></li><!--
+            --><li><a href="https://twitter.com/imoneyph" class="icon__footer-tw">Twitter</a></li><!--
+            --><li><a href="https://www.instagram.com/imoney_philippines" class="icon__footer-ig">Instagram</a></li><!--
+            --><li><a href="https://www.youtube.com/channel/UCqVreFR5Sm2bznDk58WN3tw" class="icon__footer-gp">Youtube</a></li>
+
+
+            <!-- <li><a href="https://www.facebook.com/imoneyph" class="icon__footer-fb">Facebook</a></li>
+            <li><a href="https://twitter.com/imoneyph" class="icon__footer-tw">Twitter</a></li>
+            <li><a href="https://plus.google.com/+imoneyph" class="icon__footer-gp">Google Plus</a></li>
+            <li><a href="http://www.pinterest.com/imoneyph" class="icon__footer-pt">Pinterest</a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container">
+        	<ul class="footer-menu__nav"><li id="menu-item-16432" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16432"><a href="https://www.imoney.ph/?ref=articles-footer">Go to iMoney.ph</a></li>
+<li id="menu-item-16434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16434"><a href="https://www.imoney.ph/privacy-policy?ref=articles-footer">Privacy Policy</a></li>
+<li id="menu-item-16433" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16433"><a href="https://www.imoney.ph/disclaimer?ref=articles-footer">Disclaimer</a></li>
+<li id="menu-item-23753" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23753"><a href="http://www.imoney-group.com/?ref=articles-footer-ph">Corporate</a></li>
+</ul>          <p class="footer__copyright">&copy; 2020 iMoney.ph</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://www.imoney.ph/articles/wp-content/themes/imoney-2015-ph/css/base.css">
+
+    
+    
+    <script type='text/javascript'>
+/* <![CDATA[ */
+var ajax_tptn_tracker = {"ajax_url":"https:\/\/www.imoney.ph\/articles\/wp-admin\/admin-ajax.php","top_ten_id":"20083","top_ten_blog_id":"1","activate_counter":"0","top_ten_debug":"0","tptn_rnd":"622091974"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-content/plugins/top-10/includes/js/top-10-tracker.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.imoney.ph/articles/wp-includes/js/wp-embed.min.js?ver=5.2.3'></script>
+<!-- Facebook Comments Plugin for WordPress: http://peadig.com/wordpress-plugins/facebook-comments/ -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=854722911243224&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <script>
+      iAJSLoader.onComplete = function() {
+        jQuery('document').ready(function() {
+          var scrollOptions = {
+            points: [25, 50, 75, 100],
+            region: '',
+            subject: 'User',
+            action: 'Scroll',
+            description: '',
+          vertical: 'Learning Centre'
+          };
+
+          imuInit('scroll', scrollOptions);
+
+          //Track Early events triggered before imu got ready
+          window.imuEarlyTrackData = window.imuEarlyTrackData || [];
+
+          _.each(window.imuEarlyTrackData, function(track) {
+            userManager.track(track);
+          });
+
+          window.imuEarlyTrackData = []; //clear buffer
+
+          jQuery.scrollDepth({
+            nonInteraction: false
+          });
+        });
+      }
+    </script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c7315038e4","applicationID":"283044406","transactionName":"ZAFWZhAHDEYHAhZZDl1LdVEWDw1bSRILXgZfAQ==","queueTime":0,"applicationTime":546,"atts":"SEZVEFgdH0g=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
